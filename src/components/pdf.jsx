@@ -1,7 +1,8 @@
-import React from 'react'
+import React from "react";
+import UnderConstruction from "../bone-components/under_construction";
 class PDF extends React.Component {
   render() {
-    return <h1>PDF</h1>
+    return <UnderConstruction />;
   }
 }
-export default PDF
+export default PDF;

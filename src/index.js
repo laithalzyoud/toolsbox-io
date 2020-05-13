@@ -1,28 +1,47 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Route, BrowserRouter as Router } from 'react-router-dom'
-import './index.css';
-import App from './App';
-import PDF from './components/pdf';
-import OCR from './components/ocr';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import "./index.css";
+import Main from "./components/main";
+import PDF from "./components/pdf";
+import OCR from "./components/ocr";
 
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from "./serviceWorker";
+import JSON from "./components/json";
+import GeoJSON from "./components/geojson";
+import Images from "./components/images";
+import ReportIssue from "./components/report-issue";
+import Donate from "./components/donate";
 
 ReactDOM.render(
   <React.StrictMode>
+    <Router>
+      <Switch>
+        <Route path="/pdf" component={PDF} />
+        <Route path="/ocr" component={OCR} />
+        <Route path="/json" component={JSON} />
+        <Route path="/geojson" component={GeoJSON} />
+        <Route path="/images" component={Images} />
+        <Route path="/report-issue" component={ReportIssue} />
+        <Route path="/donate" component={Donate} />
+        <Route
+          path="/"
+          render={(props) => {
+            const [subdomain] = window.location.hostname.split(".");
+            console.log(subdomain);
+            if (subdomain === "pdf") return <PDF {...props} />;
+            if (subdomain === "ocr") return <OCR {...props} />;
+            if (subdomain === "json") return <JSON {...props} />;
+            if (subdomain === "geojson") return <GeoJSON {...props} />;
+            if (subdomain === "images") return <Images {...props} />;
+            return <Main />;
+          }}
+        />
+      </Switch>
+    </Router>
+  </React.StrictMode>,
 
-  <Router>
-  <Route path="/" render={props => {
-    const [subdomain] = window.location.hostname.split('.');
-    console.log(subdomain)
-    if (subdomain === 'pdf') return <PDF {...props}/>;
-    if (subdomain === 'ocr') return <OCR {...props}/>;
-    return <App />;
-  }}/>
-</Router>
-</React.StrictMode>,
-
-document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

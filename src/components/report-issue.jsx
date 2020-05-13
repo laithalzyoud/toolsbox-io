@@ -1,8 +1,8 @@
 import React from "react";
 import UnderConstruction from "../bone-components/under_construction";
-class OCR extends React.Component {
+class ReportIssue extends React.Component {
   render() {
     return <UnderConstruction />;
   }
 }
-export default OCR;
+export default ReportIssue;
