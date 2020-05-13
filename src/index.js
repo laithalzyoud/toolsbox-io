@@ -17,13 +17,13 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route path="/pdf" component={PDF} />
-        <Route path="/ocr" component={OCR} />
-        <Route path="/json" component={JSON} />
-        <Route path="/geojson" component={GeoJSON} />
-        <Route path="/images" component={Images} />
-        <Route path="/report-issue" component={ReportIssue} />
-        <Route path="/donate" component={Donate} />
+        <Route exact path="/pdf" component={PDF} />
+        <Route exact path="/ocr" component={OCR} />
+        <Route exact path="/json" component={JSON} />
+        <Route exact path="/geojson" component={GeoJSON} />
+        <Route exact path="/images" component={Images} />
+        <Route exact path="/report-issue" component={ReportIssue} />
+        <Route exact path="/donate" component={Donate} />
         <Route
           path="/"
           render={(props) => {

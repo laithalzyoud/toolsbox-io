@@ -1,7 +1,6 @@
 import React from "react";
 import UnderConstruction from "react-under-construction";
 import "react-under-construction/build/css/index.css";
-import MailIcon from "@material-ui/icons/Mail";
 import Logo from "../assets/logo/toolsboxio-logo-only-white.png";
 
 function UnderConstructionFull(props) {
@@ -38,12 +37,6 @@ function UnderConstructionFull(props) {
           maxWidth: "440px",
         },
       }}
-      links={[
-        {
-          url: "mailto:laith.alzyoud@icloud.com",
-          text: <MailIcon fontSize="large" />,
-        },
-      ]}
     />
   );
 }

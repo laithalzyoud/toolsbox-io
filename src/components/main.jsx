@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/styles";
-import { Helmet } from "react-helmet";
 import Layout from "../bone-components/layout";
 import { tools } from "../configs/main-tools";
 import { Link } from "react-router-dom";
@@ -38,9 +37,6 @@ class Main extends React.Component {
     const { classes } = this.props;
     return (
       <Layout>
-        <Helmet>
-          <title>toolsbox.io - your everyday tools</title>
-        </Helmet>
         <Container
           maxWidth="sm"
           component="main"
