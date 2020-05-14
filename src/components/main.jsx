@@ -76,6 +76,17 @@ class Main extends React.Component {
                     <CardContent className={classes.cardIcon}>
                       {tool.icon}
                     </CardContent>
+                    {tool.comingSoon ? (
+                      <Typography
+                        variant="h7"
+                        align="center"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        Coming soon.
+                      </Typography>
+                    ) : null}
+                    <br></br>
                   </Card>
                 </Link>
               </Grid>
