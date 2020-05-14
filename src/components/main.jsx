@@ -57,7 +57,7 @@ class Main extends React.Component {
             color="textSecondary"
             component="p"
           >
-            At one place
+            In one place
           </Typography>
         </Container>
         <Container maxWidth="md" component="main">

@@ -1,9 +1,9 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
-// import Grid from "@material-ui/core/Grid";
+import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import MailIcon from "@material-ui/icons/Mail";
 import IconButton from "@material-ui/core/IconButton";
@@ -49,58 +49,50 @@ function Copyright() {
   );
 }
 
-// const footers = [
-//   {
-//     title: "Company",
-//     description: ["Team", "History", "Contact us", "Locations"],
-//   },
-//   {
-//     title: "Features",
-//     description: [
-//       "Cool stuff",
-//       "Random feature",
-//       "Team feature",
-//       "Developer stuff",
-//       "Another one",
-//     ],
-//   },
-//   {
-//     title: "Resources",
-//     description: [
-//       "Resource",
-//       "Resource name",
-//       "Another resource",
-//       "Final resource",
-//     ],
-//   },
-//   {
-//     title: "Legal",
-//     description: ["Privacy policy", "Terms of use"],
-//   },
-// ];
+const footers = [
+  {
+    title: "Help us improve",
+    description: [
+      ["Donate", "/donate"],
+      ["Report Issue", "/report-issue"],
+    ],
+  },
+  {
+    title: "Legal",
+    description: [
+      ["Privacy policy", "/privacy"],
+      ["Terms of use", "/terms"],
+    ],
+  },
+];
 
 const Footer = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="md" component="footer" className={classes.footer}>
-      {/* <Grid container spacing={4} justify="space-evenly">
+      <Grid container spacing={4} justify="space-evenly">
         {footers.map((footer) => (
           <Grid item xs={6} sm={3} key={footer.title}>
             <Typography variant="h6" color="textPrimary" gutterBottom>
               {footer.title}
             </Typography>
             <ul>
-              {footer.description.map((item) => (
-                <li key={item}>
-                  <Link href="#" variant="subtitle1" color="textSecondary">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <nav>
+                {footer.description.map((item) => (
+                  <li key={item[0]}>
+                    <Link
+                      to={item[1]}
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      {item[0]}
+                    </Link>
+                  </li>
+                ))}
+              </nav>
             </ul>
           </Grid>
         ))}
-      </Grid> */}
+      </Grid>
       <Box mt={5}>
         <Copyright />
       </Box>
