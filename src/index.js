@@ -24,19 +24,7 @@ ReactDOM.render(
         <Route exact path="/images" component={Images} />
         <Route exact path="/report-issue" component={ReportIssue} />
         <Route exact path="/donate" component={Donate} />
-        <Route
-          path="/"
-          render={(props) => {
-            const [subdomain] = window.location.hostname.split(".");
-            console.log(subdomain);
-            if (subdomain === "pdf") return <PDF {...props} />;
-            if (subdomain === "ocr") return <OCR {...props} />;
-            if (subdomain === "json") return <JSON {...props} />;
-            if (subdomain === "geojson") return <GeoJSON {...props} />;
-            if (subdomain === "images") return <Images {...props} />;
-            return <Main />;
-          }}
-        />
+        <Route exact path="/" component={Main} />
       </Switch>
     </Router>
   </React.StrictMode>,
