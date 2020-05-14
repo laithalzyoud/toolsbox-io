@@ -20,6 +20,7 @@ jobs:
           CI: true
   deploy:
     if: github.ref == 'refs/heads/master'
+    needs: build
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v1
