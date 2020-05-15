@@ -12,6 +12,7 @@ import { withStyles } from "@material-ui/styles";
 import Layout from "../bone-components/layout";
 import { tools } from "../configs/main-tools";
 import { Link } from "react-router-dom";
+import AdComponent from "../bone-components/ad_component";
 
 const styles = () => ({
   heroContent: {
@@ -92,6 +93,7 @@ class Main extends React.Component {
               </Grid>
             ))}
           </Grid>
+          <AdComponent></AdComponent>
         </Container>
       </Layout>
     );
