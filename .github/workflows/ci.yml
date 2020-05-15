@@ -4,10 +4,11 @@ on: [push]
 
 jobs:
   build:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x, 14.x]
+        os: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -21,7 +22,10 @@ jobs:
   deploy:
     if: github.ref == 'refs/heads/master'
     needs: build
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
     steps:
       - uses: actions/checkout@v1
       - name: Push to server
