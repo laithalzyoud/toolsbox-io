@@ -3,7 +3,8 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
+import { Link as LinkRouter } from "react-router-dom";
+import { Link as LinkMUI } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MailIcon from "@material-ui/icons/Mail";
 import IconButton from "@material-ui/core/IconButton";
@@ -32,10 +33,10 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://toolsbox.io/">
+      <LinkMUI color="inherit" href="https://toolsbox.io/">
         toolsbox.io
-      </Link>{" "}
-      {new Date().getFullYear()}.
+      </LinkMUI>{" "}
+      {new Date().getFullYear()}
       <IconButton
         aria-label="Send email"
         onClick={() => window.open("mailto:laith.alzyoud@icloud.com")}
@@ -79,13 +80,13 @@ const Footer = () => {
             <ul>
               <nav>
                 {footer.description.map((item) => (
-                  <li key={item[0]}>
-                    <Link
+                  <li key={item[0]} style={{ justifyContent: "center" }}>
+                    <LinkRouter
                       to={item[1]}
                       style={{ textDecoration: "none", color: "black" }}
                     >
                       {item[0]}
-                    </Link>
+                    </LinkRouter>
                   </li>
                 ))}
               </nav>

@@ -158,3 +158,7 @@ Temporary Items
 
 # node modules
 node_modules
+
+#VS Code
+
+.vscode
